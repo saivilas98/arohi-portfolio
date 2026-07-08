@@ -34,7 +34,7 @@ export function Contact() {
             className="pointer-events-none absolute inset-0"
             style={{
               background:
-                "radial-gradient(60% 60% at 50% 0%, rgba(184,80,47,0.22), transparent 65%)",
+                "radial-gradient(60% 60% at 50% 0%, rgba(124,92,209,0.22), transparent 65%)",
             }}
             aria-hidden
           />

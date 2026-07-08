@@ -4,17 +4,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        paper: "#FAF8F4",
-        ink: "#1B1812",
-        muted: "#75705F",
-        line: "#E7E1D4",
+        paper: "#F6F4FC",
+        ink: "#211D2E",
+        muted: "#726C88",
+        line: "#E3DEF3",
         surface: "#FFFFFF",
         accent: {
-          DEFAULT: "#B8502F",
-          soft: "#F2E2D5",
-          deep: "#8C3B22",
+          DEFAULT: "#7C5CD1",
+          soft: "#ECE6FA",
+          deep: "#55368F",
         },
-        olive: "#565232",
+        olive: "#6B5A94",
       },
       fontFamily: {
         display: ["'Fraunces'", "serif"],

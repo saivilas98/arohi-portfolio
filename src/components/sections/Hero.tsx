@@ -15,7 +15,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 55% at 78% 18%, rgba(184,80,47,0.10), transparent 65%), radial-gradient(45% 40% at 8% 85%, rgba(86,82,50,0.08), transparent 60%)",
+            "radial-gradient(60% 55% at 78% 18%, rgba(124,92,209,0.12), transparent 65%), radial-gradient(45% 40% at 8% 85%, rgba(107,90,148,0.10), transparent 60%)",
         }}
         aria-hidden
       />
@@ -77,26 +77,18 @@ export function Hero() {
           className="relative mx-auto w-full max-w-sm lg:max-w-none"
         >
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[2rem] border border-line bg-gradient-to-br from-accent-soft via-paper to-olive/10">
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(120% 90% at 20% 0%, rgba(184,80,47,0.28), transparent 55%), radial-gradient(90% 70% at 90% 100%, rgba(86,82,50,0.25), transparent 60%)",
-              }}
-              aria-hidden
+            <img
+              src="/profile.png"
+              alt={profile.name}
+              className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-display text-[7rem] font-medium text-ink/90 select-none">
-                AS
-              </span>
-            </div>
           </div>
 
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.6 }}
-            className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-line bg-surface px-5 py-4 shadow-[0_20px_50px_-25px_rgba(27,24,18,0.35)] sm:block"
+            className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-line bg-surface px-5 py-4 shadow-[0_20px_50px_-25px_rgba(33,29,46,0.35)] sm:block"
           >
             <p className="text-2xl font-display font-medium text-ink">47.6K</p>
             <p className="text-xs text-muted">views on one giveaway post</p>
@@ -106,7 +98,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: easeOut, delay: 0.75 }}
-            className="absolute -top-6 -right-4 hidden rounded-2xl border border-line bg-surface px-5 py-4 shadow-[0_20px_50px_-25px_rgba(27,24,18,0.35)] sm:block"
+            className="absolute -top-6 -right-4 hidden rounded-2xl border border-line bg-surface px-5 py-4 shadow-[0_20px_50px_-25px_rgba(33,29,46,0.35)] sm:block"
           >
             <p className="text-2xl font-display font-medium text-ink">2</p>
             <p className="text-xs text-muted">categories reimagined</p>

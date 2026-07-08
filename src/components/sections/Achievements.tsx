@@ -19,7 +19,7 @@ export function Achievements() {
             <Reveal
               key={achievement.title}
               delay={index * 0.08}
-              className="group relative overflow-hidden rounded-2xl border border-line bg-surface p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-35px_rgba(27,24,18,0.3)]"
+              className="group relative overflow-hidden rounded-2xl border border-line bg-surface p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_30px_60px_-35px_rgba(33,29,46,0.3)]"
             >
               <Sparkles
                 size={20}

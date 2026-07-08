@@ -64,6 +64,7 @@ export type CaseStudy = {
   execution: string;
   outcome: string;
   metrics: { label: string; value: string }[];
+  images: { src: string; alt: string }[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -88,6 +89,11 @@ export const caseStudies: CaseStudy[] = [
       { label: "Giveaway comments", value: "196" },
       { label: "Ad performance", value: "Top A/B" },
     ],
+    images: [
+      { src: "/work/adigo/sunscreen.jpg", alt: "Skincare sunscreen product shot" },
+      { src: "/work/adigo/beard-oil.jpg", alt: "Beard oil bottle product shot" },
+      { src: "/work/adigo/skincare-flatlay.jpg", alt: "Minimal skincare flatlay" },
+    ],
   },
   {
     id: "stanfresh",
@@ -109,6 +115,11 @@ export const caseStudies: CaseStudy[] = [
       { label: "Homes reviewed", value: "2,000+" },
       { label: "Corporate jargon used", value: "Zero" },
       { label: "Content system", value: "Modular" },
+    ],
+    images: [
+      { src: "/work/stanfresh/washer.jpg", alt: "Washer and dryer in a home laundry setting" },
+      { src: "/work/stanfresh/spray-bottle.jpg", alt: "Home cleaning spray bottle product shot" },
+      { src: "/work/stanfresh/kitchen-sink.jpg", alt: "Kitchen sink with soap dispenser" },
     ],
   },
 ];

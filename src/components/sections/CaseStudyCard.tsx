@@ -7,7 +7,7 @@ export function CaseStudyCard({ study, index }: { study: CaseStudy; index: numbe
 
   return (
     <Reveal
-      className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 rounded-[1.75rem] border border-line bg-surface p-7 sm:p-10 md:p-12 transition-shadow duration-500 hover:shadow-[0_40px_80px_-45px_rgba(27,24,18,0.25)]"
+      className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 rounded-[1.75rem] border border-line bg-surface p-7 sm:p-10 md:p-12 transition-shadow duration-500 hover:shadow-[0_40px_80px_-45px_rgba(33,29,46,0.25)]"
     >
       <div className={`lg:col-span-5 flex flex-col gap-6 ${reversed ? "lg:order-2" : "lg:order-1"}`}>
         <div>
@@ -18,6 +18,22 @@ export function CaseStudyCard({ study, index }: { study: CaseStudy; index: numbe
             {study.title}
           </h3>
           <p className="mt-2 text-sm font-medium text-muted">{study.brand}</p>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2.5">
+          {study.images.map((image) => (
+            <div
+              key={image.src}
+              className="aspect-square overflow-hidden rounded-xl border border-line bg-paper"
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ))}
         </div>
 
         <div className="grid grid-cols-3 gap-3 pt-2">
