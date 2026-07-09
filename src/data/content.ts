@@ -9,6 +9,17 @@ export const profile = {
   resumeUrl: "/Arohi-Shukla-Resume.pdf",
 };
 
+export type EducationEntry = {
+  institution: string;
+  program: string;
+  years: string;
+};
+
+export const education: EducationEntry[] = [
+  { institution: "IIT Indore", program: "B.Tech, Mechanical Engineering", years: "2015–19" },
+  { institution: "IIM Calcutta", program: "MBA", years: "2023–25" },
+];
+
 export const about = {
   eyebrow: "About",
   heading: "Content that belongs in the feed, not interrupts it.",
