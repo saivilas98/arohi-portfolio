@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowDown, ArrowUpRight, GraduationCap } from "lucide-react";
-import { education, profile } from "../../data/content";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { profile } from "../../data/content";
 import { Container } from "../ui/Container";
 import { MagneticButton } from "../ui/MagneticButton";
 import { easeOut } from "../../lib/motion";
@@ -55,30 +55,10 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: easeOut, delay: 0.26 }}
-            className="mt-6 flex items-start gap-2.5 text-sm text-muted"
-          >
-            <GraduationCap size={15} className="mt-[3px] text-accent/60 shrink-0" aria-hidden />
-            <div className="flex flex-col gap-1">
-              {education.map((edu) => (
-                <p key={edu.institution}>
-                  <span className="font-medium text-ink/75 whitespace-nowrap">
-                    {edu.institution}
-                  </span>
-                  <span className="mx-1.5 text-line">—</span>
-                  {edu.program}, {edu.years}
-                </p>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: easeOut, delay: 0.36 }}
-            className="mt-9 flex flex-wrap items-center gap-4"
+            transition={{ duration: 0.75, ease: easeOut, delay: 0.28 }}
+            className="mt-10 flex flex-wrap items-center gap-4"
           >
             <MagneticButton href="#work" variant="primary">
               See the work
