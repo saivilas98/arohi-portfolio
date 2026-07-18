@@ -11,6 +11,7 @@
 
   body {
     @apply bg-paper text-ink font-sans antialiased;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -21,6 +22,28 @@
   :focus-visible {
     outline: 2px solid #7c5cd1;
     outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f6f4fc;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #7c5cd1, #55368f);
+    border-radius: 999px;
+    border: 2px solid #f6f4fc;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a,
+    button,
+    [role="button"] {
+      cursor: none;
+    }
   }
 }
 
@@ -42,5 +65,32 @@
   .underline-reveal:hover,
   .underline-reveal.is-active {
     background-size: 100% 1px;
+  }
+
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    mix-blend-mode: overlay;
+  }
+
+  .gradient-text {
+    background: linear-gradient(100deg, #7c5cd1 0%, #a78bfa 45%, #55368f 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mask-fade-x {
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  }
+
+  .spotlight {
+    background: radial-gradient(
+      420px circle at var(--x, 50%) var(--y, 50%),
+      rgba(124, 92, 209, 0.16),
+      transparent 70%
+    );
   }
 }

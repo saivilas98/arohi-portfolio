@@ -3,6 +3,11 @@ import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeading } from "../ui/SectionHeading";
 
+const thumbnails: Record<string, { src: string; alt: string }> = {
+  "Adigo India": { src: "/work/adigo/beard-oil.jpg", alt: "Adigo India beard oil product shot" },
+  "Stanfresh India": { src: "/work/stanfresh/washer.jpg", alt: "Stanfresh India home care product shot" },
+};
+
 export function Experience() {
   return (
     <section id="experience" className="py-28 md:py-36 bg-surface/60">
@@ -30,9 +35,21 @@ export function Experience() {
                 </span>
 
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                  <h3 className="font-display text-2xl font-medium text-ink">
-                    {entry.org}
-                  </h3>
+                  <div className="flex items-center gap-3">
+                    {thumbnails[entry.org] && (
+                      <span className="h-9 w-9 flex-none overflow-hidden rounded-full border-2 border-paper shadow-[0_6px_16px_-6px_rgba(33,29,46,0.4)] ring-1 ring-line">
+                        <img
+                          src={thumbnails[entry.org].src}
+                          alt={thumbnails[entry.org].alt}
+                          className="h-full w-full object-cover"
+                          loading="lazy"
+                        />
+                      </span>
+                    )}
+                    <h3 className="font-display text-2xl font-medium text-ink">
+                      {entry.org}
+                    </h3>
+                  </div>
                   <span className="text-sm uppercase tracking-[0.15em] text-muted">
                     {entry.period}
                   </span>

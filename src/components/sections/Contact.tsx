@@ -1,3 +1,4 @@
+import type { MouseEvent } from "react";
 import { ArrowUpRight, AtSign, Link2, Mail } from "lucide-react";
 import { profile } from "../../data/content";
 import { Container } from "../ui/Container";
@@ -26,15 +27,32 @@ const links = [
 ];
 
 export function Contact() {
+  function handleSpotlight(event: MouseEvent<HTMLDivElement>) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    event.currentTarget.style.setProperty("--x", `${event.clientX - rect.left}px`);
+    event.currentTarget.style.setProperty("--y", `${event.clientY - rect.top}px`);
+  }
+
   return (
     <section id="contact" className="py-28 md:py-36">
       <Container>
-        <div className="rounded-[2rem] border border-line bg-ink px-8 py-16 sm:px-16 md:py-20 text-center relative overflow-hidden">
+        <div
+          onMouseMove={handleSpotlight}
+          className="group rounded-[2rem] border border-line bg-ink px-8 py-16 sm:px-16 md:py-20 text-center relative overflow-hidden transition-shadow duration-500 hover:shadow-glow-lg"
+        >
           <div
             className="pointer-events-none absolute inset-0"
             style={{
               background:
                 "radial-gradient(60% 60% at 50% 0%, rgba(124,92,209,0.22), transparent 65%)",
+            }}
+            aria-hidden
+          />
+          <div
+            className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            style={{
+              background:
+                "radial-gradient(380px circle at var(--x, 50%) var(--y, 50%), rgba(124,92,209,0.35), transparent 70%)",
             }}
             aria-hidden
           />

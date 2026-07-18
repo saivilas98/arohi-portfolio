@@ -30,14 +30,16 @@ export function Nav() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-paper/85 backdrop-blur-md border-b border-line" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-paper/70 backdrop-blur-xl border-b border-line shadow-[0_10px_40px_-30px_rgba(33,29,46,0.4)]"
+          : "bg-transparent"
       }`}
     >
       <Container className="flex h-20 items-center justify-between">
         <a
           href="#top"
-          className="font-display text-lg font-medium tracking-tight text-ink"
+          className="font-display text-lg font-medium tracking-tight text-ink transition-colors hover:text-accent-deep"
         >
           {profile.name}
         </a>
@@ -50,11 +52,18 @@ export function Nav() {
               <a
                 key={item.href}
                 href={item.href}
-                className={`underline-reveal text-sm font-medium transition-colors ${
+                className={`relative underline-reveal text-sm font-medium transition-colors ${
                   isActive ? "text-ink is-active" : "text-muted hover:text-ink"
                 }`}
               >
                 {item.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-active-dot"
+                    className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-accent"
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                )}
               </a>
             );
           })}
@@ -62,7 +71,7 @@ export function Nav() {
 
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-deep"
+          className="group hidden md:inline-flex items-center overflow-hidden rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition-all duration-300 hover:shadow-glow"
         >
           Let's talk
         </a>
